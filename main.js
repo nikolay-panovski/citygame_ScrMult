@@ -25,28 +25,20 @@ function doMqttConnect() {
         username: process.env.TOTO_OBJECTS_USERNAME,     // for some reason does not get transmitted from .env
         password: process.env.TOTO_OBJECTS_PASSWORD,
     });
-    console.log(client);
 
 
     client.on('connect', () => {
-        console.log('Connected to MQTT broker');
-      
         client.subscribe('toto/' + totoRepoId + '/' + totoHubId + '/in' );
-
-        win.webContents.send("mqtt", "Hello from main!");
     });
       
 
     client.on('message', (topic, message) => {
-        console.log(`-- MESSAGE TOPIC: -- ${topic}`);
-      
         // send message as received, renderer uses ids to filter it and deal with it
         win.webContents.send("mqtt", message.toString());
     });
       
     // Handle disconnects
     client.on('close', () => {
-        console.log('Disconnected from MQTT broker');
         client.end();
         process.exit();
     });
