@@ -1,13 +1,6 @@
 
 const body = document.getElementById("body");
 
-/**
-const func = async () => {
-    const response = await window.tutorial.ping();
-    console.log(response); // prints out 'pong'
-}
-/**/
-
 window.mqttAPI.onMqttMessage((message) => {
     console.log("Message at renderer: ");
     console.log(message);
