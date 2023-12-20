@@ -2,7 +2,6 @@
   "name": "citygame_scrmult",
   "version": "1.0.0",
   "description": "App for Toto control of screens over MQTT.",
-  "type": "module",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
