@@ -1,7 +1,10 @@
 const { contextBridge, ipcRenderer } = require("electron");
+const env = require("dotenv");
+
+env.config();
 
 
-const totoObjectId = "4c605b6e-b456-4e62-a06d-7e752c81e57f";    // NP-ScrMult/00#-Screen# (!! adjust uniquely per screen / Electron app instance)
+const totoObjectId = process.env.THIS_TOTO_OBJ_ID;    // NP-ScrMult/00#-Screen# (!! adjust uniquely per screen / Electron app instance)
 
 
 
