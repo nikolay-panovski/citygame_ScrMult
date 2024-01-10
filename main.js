@@ -1,9 +1,12 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("node:path");
+const env = require("dotenv");
 
 const mqtt = require("mqtt");
 const totoRepoId = "e0c1defb-c75d-4c3b-8ef2-69d7ec8e224c";      // City and City
 const totoHubId = "2e44ba80-6d28-4dac-a365-75cdb0fa7ebc";       // NP-ScrMult/100-SignalHub
+
+env.config();   // get variables from .env file into "process.env"
 
 let win;
 
