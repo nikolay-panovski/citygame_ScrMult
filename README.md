@@ -24,3 +24,4 @@ Since the resulting frontend app is based on Electron (packaging on Electron For
 
 # Known issues
 
+- [ ] Image may not be tiled correctly depending on the screen/app size (`index.html` -> `style - body` -> `background-size: cover`).
