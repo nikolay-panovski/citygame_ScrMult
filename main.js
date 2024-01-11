@@ -21,6 +21,7 @@ const createWindow = () => {
         }
     });
   
+    win.removeMenu();   // Windows and Linux only; https://stackoverflow.com/a/39092033
     win.loadFile('index.html');
 }
 
